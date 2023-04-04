@@ -101,56 +101,53 @@ body{
     left: 24px;
 }
 
-.dot {
-    position: relative;
-    margin: auto;
-    content: '';
+
+.dot, .hour, .minute, .second {
     width: 10px;
     height: 10px;
-    background-color: black;
     border-radius: 50%;
-}
-
-
-.hour {
-    /* height: 10px; */
-}
-
-.hr {
-    position: absolute;
-    width: 8px;
-    height: 70px;
-    background-color: red;
-    border-radius: 100px;
-    transform: translateY(-100%);
-}
-
-.minute {
-    /* height: 10px; */
-}
-
-
-.min{
-    position: absolute;
-    width: 5px;
-    height: 100px;
-    margin: auto;
     background-color: black;
-    border-radius: 100px;
-    transform: translate(50%, -100%);
-
 }
+
 
 .second {
-    /* height: 10px; */
+    background-color: red;
 }
 
-.sec {
-    position: absolute;
-    width: 3px;
-    height: 120px;
+.dot {
     margin: auto;
-    background-color: blue;
-    border-radius: 100px;
-    transform: translate(50%, -100%);   
+    position: relative;
+}
+
+
+.hour, .second, .minute {
+    position: absolute;
+}
+
+
+.hr, .min, .sec {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translate(-50%,0);
+}
+
+
+.hour .hr {
+    height: 80px;
+    width: 80%;
+    background-color: black;
+}
+
+
+.minute .min {
+    height: 90px;
+    width: 80%;
+}
+
+
+.second .sec {
+    height: 100px;
+    width: 50%;
+    background-color: red;
 }

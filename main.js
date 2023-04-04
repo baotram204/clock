@@ -7,18 +7,21 @@ const min = document.querySelector('.min')
 const hr = document.querySelector('.hr')
 
 let isNight = localStorage.getItem('isNight') || false
-let savedCurr = localStorage.getItem('currentTheme') || light.toString()
+let savedCurr = localStorage.getItem('currentTheme') 
 
-let restoreTheme = eval( `(${savedCurr})` )
-restoreTheme()
+if (savedCurr === 'light') {
+    light()
+} else {
+    dark()
+}
 
 function themeToggle() {
     if (isNight) {
         light()
-        savedCurr = localStorage.setItem('currentTheme', light.toString() )
+        savedCurr = localStorage.setItem('currentTheme', 'light' )
     } else {
         dark()
-        savedCurr = localStorage.setItem('currentTheme', dark.toString() )
+        savedCurr = localStorage.setItem('currentTheme', 'dark' )
     }
     isNight = !isNight
     localStorage.setItem('isNight', isNight)

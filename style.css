@@ -4,6 +4,8 @@
     box-sizing: border-box;
 }
 
+
+
 body{
     width: 100%;
     height: 100%;
@@ -13,6 +15,7 @@ body{
     position: absolute;
     font-size: 32px;
     font-weight: 600;
+    /* color: #fff; */
 }
 /*  */
 
@@ -24,6 +27,7 @@ body{
 }
 
 .frame {
+    position: relative;
     margin: auto;
     width: 150px;
     height: 75px;
@@ -33,15 +37,17 @@ body{
 
 .day,
 .night {
+    position: absolute;
     width: 75px;
     height: 73px;
     display: flex;
     border-radius: 50%;
     box-shadow: 3px 0px 8px 0px #ccc;
+    transition: all 0.4s;
 }
 
 .night {
-    margin-left: 72px;
+    right: 0;
     box-shadow: -3px 0px 8px 0px #ccc;
 }
 
@@ -64,10 +70,11 @@ body{
 
 .clock {
     background: url(./imgs/light-mode.png) center center / cover;
+    /* background: url(./imgs/dark-mode.png) center center / cover; */
     height: 320px;
     width: 320px;
     margin: auto;
-    background-color: #fff;
+    /* background-color: #fff; */
     box-shadow: 0px 5px 8px 5px #ccc;
     border-radius: 50%;
     display: flex;
@@ -101,56 +108,55 @@ body{
     left: 24px;
 }
 
-.dot {
-    position: relative;
-    margin: auto;
-    content: '';
+
+.dot, .hour, .minute, .second {
     width: 10px;
     height: 10px;
-    background-color: black;
     border-radius: 50%;
-}
-
-
-.hour {
-    /* height: 10px; */
-}
-
-.hr {
-    position: absolute;
-    width: 8px;
-    height: 70px;
-    background-color: red;
-    border-radius: 100px;
-    transform: translateY(-100%);
-}
-
-.minute {
-    /* height: 10px; */
-}
-
-
-.min{
-    position: absolute;
-    width: 5px;
-    height: 100px;
-    margin: auto;
     background-color: black;
-    border-radius: 100px;
-    transform: translate(50%, -100%);
-
 }
+
 
 .second {
-    /* height: 10px; */
+    background-color: red;
 }
 
-.sec {
-    position: absolute;
-    width: 3px;
-    height: 120px;
+.dot {
     margin: auto;
-    background-color: blue;
+    position: relative;
+}
+
+
+.hour, .second, .minute {
+    position: absolute;
+}
+
+
+.hr, .min, .sec {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translate(-50%,0);
     border-radius: 100px;
-    transform: translate(50%, -100%);   
+}
+
+
+.hour .hr {
+    height: 70px;
+    width: 80%;
+    background-color: black;
+}
+
+
+.minute .min {
+    height: 90px;
+    width: 80%;
+    background-color: black;
+}
+
+
+.second .sec {
+    height: 100px;
+    width: 50%;
+    background-color: red;
 }

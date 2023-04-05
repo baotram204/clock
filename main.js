@@ -6,15 +6,23 @@ const clock = document.querySelector('.clock')
 const min = document.querySelector('.min')
 const hr = document.querySelector('.hr')
 
-let isNight = localStorage.getItem('isNight') || false
+// khởi tạo localstorage
+let isNight = localStorage.getItem('isNight') 
 let savedCurr = localStorage.getItem('currentTheme') 
 
-if (savedCurr === 'light') {
+
+if (isNight === 'false') {
+    isNight = false
+}
+
+// after refresh update use web 
+if (savedCurr === 'light' || savedCurr === null) {
     light()
 } else {
     dark()
 }
 
+// function turnn on or off light
 function themeToggle() {
     if (isNight) {
         light()

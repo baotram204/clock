@@ -43,12 +43,17 @@ body{
     display: flex;
     border-radius: 50%;
     box-shadow: 3px 0px 8px 0px #ccc;
-    transition: all 0.4s;
 }
 
 .night {
+    transition: all 0.4s;
     right: 0;
     box-shadow: -3px 0px 8px 0px #ccc;
+}
+
+
+.day {
+    
 }
 
 .fa-sun,
